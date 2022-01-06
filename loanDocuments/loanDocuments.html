@@ -1,0 +1,18 @@
+<!-- Loan Documents -->
+<template>
+    <template if:true={isShow}>
+        <lightning-datatable
+                data={data}
+                columns={columns}
+                hide-checkbox-column
+                key-field="id"
+                onrowaction={handleGetDocument}
+        ></lightning-datatable>
+    </template>
+    <template if:false={isShow}>
+        <div>{DocumentsMessage}</div>
+    </template>
+    <template if:true={showSpinner}>
+        <lightning-spinner class="action-spinner" variant="brand" size="large"></lightning-spinner>
+    </template>
+</template>
